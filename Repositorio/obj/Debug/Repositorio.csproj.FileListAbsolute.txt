@@ -1,0 +1,9 @@
+C:\Users\Lucas\source\repos\ExemploBancoDados02\Repositorio\bin\Debug\Repositorio.dll
+C:\Users\Lucas\source\repos\ExemploBancoDados02\Repositorio\bin\Debug\Repositorio.pdb
+C:\Users\Lucas\source\repos\ExemploBancoDados02\Repositorio\bin\Debug\Model.dll
+C:\Users\Lucas\source\repos\ExemploBancoDados02\Repositorio\bin\Debug\Model.pdb
+C:\Users\Lucas\source\repos\ExemploBancoDados02\Repositorio\obj\Debug\Repositorio.csprojAssemblyReference.cache
+C:\Users\Lucas\source\repos\ExemploBancoDados02\Repositorio\obj\Debug\Repositorio.csproj.CoreCompileInputs.cache
+C:\Users\Lucas\source\repos\ExemploBancoDados02\Repositorio\obj\Debug\Repositorio.csproj.CopyComplete
+C:\Users\Lucas\source\repos\ExemploBancoDados02\Repositorio\obj\Debug\Repositorio.dll
+C:\Users\Lucas\source\repos\ExemploBancoDados02\Repositorio\obj\Debug\Repositorio.pdb
