@@ -82,6 +82,7 @@ namespace Repositorio
 
             DataTable dataTable = new DataTable();
             dataTable.Load(comando.ExecuteReader());
+            conexao.Close();
             if(dataTable.Rows.Count == 1)
             {
                 DataRow linha = dataTable.Rows[0];
@@ -120,6 +121,8 @@ comando.Parameters.AddWithValue("@TEM_SEQUENCIA", filme.TemSequencia);
             comando.ExecuteNonQuery();
             conexao.Close();
         }
+
+
 
     }
 }
