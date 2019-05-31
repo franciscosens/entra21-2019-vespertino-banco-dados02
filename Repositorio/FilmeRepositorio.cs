@@ -122,6 +122,19 @@ comando.Parameters.AddWithValue("@TEM_SEQUENCIA", filme.TemSequencia);
             conexao.Close();
         }
 
+        public void Apagar(int id)
+        {
+            SqlConnection conexao = new SqlConnection();
+            conexao.ConnectionString = CadeiaConexao;
+            conexao.Open();
+
+            SqlCommand comando = new SqlCommand();
+            comando.Connection = conexao;
+            comando.CommandText = "DELETE FROM filmes WHERE id = @ID";
+            comando.Parameters.AddWithValue("@ID", id);
+            comando.ExecuteNonQuery();
+            conexao.Close();
+        }
 
 
     }
