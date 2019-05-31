@@ -16,11 +16,11 @@ namespace Repositorio
         /*
          * Método que irá retornar os dados dos 
          * filmes(List<Filme>) da tabela de filmes
-         */ 
+         */
         public List<Filme> ObterTodos()
         {
             //Cria a conexão com o banco de dados e abre.
-            
+
             SqlConnection conexao = new SqlConnection();
             conexao.ConnectionString = CadeiaConexao;
             conexao.Open();
@@ -38,7 +38,7 @@ namespace Repositorio
              * Cria uma tabela em memória para poder obter 
              * os dados que são retornados do bd executando 
              * o comando no bd
-             */ 
+             */
             DataTable tabela = new DataTable();
             tabela.Load(comando.ExecuteReader());
 
@@ -46,8 +46,8 @@ namespace Repositorio
             List<Filme> filmes = new List<Filme>();
 
             // Percorre todos os registros lidos do bd
-            for(int i = 0; i < tabela.Rows.Count; i++)
-            { 
+            for (int i = 0; i < tabela.Rows.Count; i++)
+            {
                 DataRow linha = tabela.Rows[i];
                 // Cria um objeto com as informações 
                 // obtidas do bd
@@ -66,7 +66,7 @@ namespace Repositorio
             // Fecha a conexão do bd
             conexao.Close();
             // retorna a lista de filmes
-            return filmes; 
+            return filmes;
         }
 
         public Filme ObterPeloId(int id)
@@ -83,7 +83,7 @@ namespace Repositorio
             DataTable dataTable = new DataTable();
             dataTable.Load(comando.ExecuteReader());
             conexao.Close();
-            if(dataTable.Rows.Count == 1)
+            if (dataTable.Rows.Count == 1)
             {
                 DataRow linha = dataTable.Rows[0];
                 Filme filme = new Filme();
@@ -112,12 +112,12 @@ namespace Repositorio
             comando.CommandText = @"INSERT INTO filmes 
 (nome, categoria, curtiu, duracao, avaliacao, tem_sequencia)
 VALUES (@NOME, @CATEGORIA, @CURTIU, @DURACAO, @AVALIACAO, @TEM_SEQUENCIA)";
-comando.Parameters.AddWithValue("@NOME", filme.Nome);
-comando.Parameters.AddWithValue("@CATEGORIA", filme.Categoria);
-comando.Parameters.AddWithValue("@CURTIU", filme.Curtiu);
-comando.Parameters.AddWithValue("@DURACAO", filme.Duracao);
-comando.Parameters.AddWithValue("@AVALIACAO", filme.Avaliacao);
-comando.Parameters.AddWithValue("@TEM_SEQUENCIA", filme.TemSequencia);
+            comando.Parameters.AddWithValue("@NOME", filme.Nome);
+            comando.Parameters.AddWithValue("@CATEGORIA", filme.Categoria);
+            comando.Parameters.AddWithValue("@CURTIU", filme.Curtiu);
+            comando.Parameters.AddWithValue("@DURACAO", filme.Duracao);
+            comando.Parameters.AddWithValue("@AVALIACAO", filme.Avaliacao);
+            comando.Parameters.AddWithValue("@TEM_SEQUENCIA", filme.TemSequencia);
             comando.ExecuteNonQuery();
             conexao.Close();
         }
@@ -136,6 +136,32 @@ comando.Parameters.AddWithValue("@TEM_SEQUENCIA", filme.TemSequencia);
             conexao.Close();
         }
 
+        public void Atualizar(Filme filme)
+        {
+            SqlConnection conexao = new SqlConnection();
+            conexao.ConnectionString = CadeiaConexao;
+            conexao.Open();
+
+            SqlCommand comando = new SqlCommand();
+            comando.Connection = conexao;
+            comando.CommandText = @"UPDATE filmes SET
+nome = @NOME,
+categoria = @CATEGORIA,
+curtiu = @CURTIU,
+duracao = @DURACAO,
+avaliacao = @AVALIACAO,
+tem_sequencia = @TEM_SEQUENCIA
+WHERE id = @ID";
+comando.Parameters.AddWithValue("@NOME", filme.Nome);
+comando.Parameters.AddWithValue("@CATEGORIA", filme.Categoria);
+comando.Parameters.AddWithValue("@CURTIU", filme.Curtiu);
+comando.Parameters.AddWithValue("@DURACAO", filme.Duracao);
+comando.Parameters.AddWithValue("@AVALIACAO", filme.Avaliacao);
+comando.Parameters.AddWithValue("@TEM_SEQUENCIA", filme.TemSequencia);
+comando.Parameters.AddWithValue("@ID", filme.Id);
+            comando.ExecuteNonQuery();
+            conexao.Close();
+        }
 
     }
 }
