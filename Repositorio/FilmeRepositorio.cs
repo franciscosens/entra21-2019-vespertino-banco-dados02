@@ -11,7 +11,7 @@ namespace Repositorio
 {
     public class FilmeRepositorio
     {
-        string CadeiaConexao = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Lucas\Documents\ExemploBancoDados02.mdf;Integrated Security=True;Connect Timeout=30";
+        string CadeiaConexao = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\fsens\Documents\ExemploBancoDados02.mdf;Integrated Security=True;Connect Timeout=30";
 
         /*
          * Método que irá retornar os dados dos 
