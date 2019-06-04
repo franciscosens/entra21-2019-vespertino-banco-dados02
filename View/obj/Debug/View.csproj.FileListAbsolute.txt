@@ -29,3 +29,4 @@ C:\Users\fsens\Documents\GitHub\exemplo-banco-dados02\View\obj\Debug\View.csproj
 C:\Users\fsens\Documents\GitHub\exemplo-banco-dados02\View\obj\Debug\View.csproj.CopyComplete
 C:\Users\fsens\Documents\GitHub\exemplo-banco-dados02\View\obj\Debug\View.exe
 C:\Users\fsens\Documents\GitHub\exemplo-banco-dados02\View\obj\Debug\View.pdb
+C:\Users\fsens\Documents\GitHub\exemplo-banco-dados02\View\obj\Debug\View.FilmeEditar.resources
